@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:models="clr-namespace:Apuntes.Models"
+             xmlns:viewModels="clr-namespace:Apuntes.ViewModels"
              x:Class="Apuntes.Views.AboutPage"
              Title="About Page">
     <ContentPage.BindingContext>
-        <models:About />
+        <viewModels:ARAboutViewModel />
     </ContentPage.BindingContext>
     
     <VerticalStackLayout Spacing="10" Margin="10">
@@ -20,6 +20,6 @@
         </HorizontalStackLayout>
         <Label Text="{Binding Message}" />
         <Label Text="This app is written in XAML and C# with .NET MAUI." />
-        <Button Text="Learn more..." Clicked="LearnMore_Clicked" />
+        <Button Text="Learn more..." Command="{Binding ShowMoreInfoCommand}" />
     </VerticalStackLayout>
 </ContentPage>
